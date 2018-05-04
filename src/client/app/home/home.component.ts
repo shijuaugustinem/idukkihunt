@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NameListService } from '../shared/name-list/name-list.service';
 
+declare var jQuery: any;
+
 /**
  * This class represents the lazy loaded HomeComponent.
  */
@@ -14,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   newName = '';
   errorMessage: string;
-  names: any[] = [];
+  trendingAdsData: any[] = [];
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -28,29 +30,62 @@ export class HomeComponent implements OnInit {
    * Get the names OnInit
    */
   ngOnInit() {
-    this.getNames();
+     this.getTrendingAds();
   }
 
   /**
    * Handle the nameListService observable
    */
-  getNames() {
-    this.nameListService.get()
+  getTrendingAds() {
+    this.nameListService.gettrendingads()
       .subscribe(
-        names => this.names = names,
+        response => {this.showtrendingads(response);},
         error => this.errorMessage = <any>error
       );
   }
-
-  /**
-   * Pushes a new name onto the names array
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  addName(): boolean {
-    // TODO: implement nameListService.post
-    this.names.push(this.newName);
-    this.newName = '';
-    return false;
-  }
-
+ showtrendingads(data:any) {
+   console.log("data",data);
+   let datalen = data.length-1;
+   if(datalen <= 3) {
+     this.trendingAdsData.push(data);
+   } else {
+      let index = 0;
+      for(let i = 0; i < datalen; i++) {
+         let adsData = [];
+         for(let j = 0; j < 4; j++) {
+	    if(index <= datalen) { 
+               adsData.push(data[index]);
+	       index++;
+	    }
+	 }
+	i = index;
+	this.trendingAdsData.push(adsData);
+      }
+   }
+   console.log("trendingAdsData",this.trendingAdsData)
+   setTimeout(()=> {
+     jQuery("#flexiselDemo3").flexisel({
+         visibleItems: 1,
+         animationSpeed: 1000,
+         autoPlay: true,
+         autoPlaySpeed: 5000,
+         pauseOnHover: true,
+         enableResponsiveBreakpoints: true,
+         responsiveBreakpoints: {
+             portrait: {
+                 changePoint: 480,
+                 visibleItems: 1
+             },
+             landscape: {
+                 changePoint: 640,
+                 visibleItems: 1
+             },
+             tablet: {
+                 changePoint: 768,
+                 visibleItems: 1
+             }
+         }
+     }); 
+   }, 200)
+ }
 }

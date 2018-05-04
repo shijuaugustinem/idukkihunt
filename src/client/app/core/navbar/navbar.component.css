@@ -1,22 +1,31 @@
-:host {
-  border: 0 solid #e1e1e1;
-  border-bottom-width: 1px;
-  display: block;
-  height: 48px;
-  padding: 0 16px;
+.banner {
+	background:url('../../../assets/images/banner.jpg') no-repeat 0px 0px;
+	background-size:cover;
+	min-height:240px;
+	padding:45px 0 0 0;
 }
-
-nav a {
-  color: #8f8f8f;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 48px;
-  margin-right: 20px;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
+.main-banner {
+	background:url('../../../assets/images/banner.jpg') no-repeat 0px 0px;
+	background-size:cover;
+	min-height:400px;
+	padding:100px 0 0 0;
 }
-
-nav a.router-link-active {
-  color: #106cc8;
+.banner h1 {
+	color:#fff;
+	font-size: 45px;
+}
+.banner p {
+    color: #fff;
+    margin: 10px 0 30px 0;
+    font-size: 18px;
+}
+.banner a {
+	text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    background-color: #f3c500;
+    padding: 10px 20px;
+}
+.banner a:hover {
+	background:#01A185;
 }

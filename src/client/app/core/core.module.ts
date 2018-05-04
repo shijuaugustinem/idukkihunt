@@ -4,12 +4,13 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [RouterModule],
-  declarations: [NavbarComponent, ToolbarComponent],
+  declarations: [NavbarComponent, ToolbarComponent, FooterComponent],
   exports: [RouterModule,
-    NavbarComponent, ToolbarComponent]
+    NavbarComponent, ToolbarComponent, FooterComponent]
 })
 export class CoreModule {
 

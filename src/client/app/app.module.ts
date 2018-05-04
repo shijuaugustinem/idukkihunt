@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AboutModule } from './about/about.module';
+import { PostadModule } from './postad/postad.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
@@ -14,7 +14,7 @@ import { CoreModule } from './core/core.module';
 @NgModule({
   imports: [BrowserModule, CoreModule,
     HttpClientModule, AppRoutingModule,
-    AboutModule, HomeModule,
+    PostadModule, HomeModule,
     SharedModule.forRoot()],
   declarations: [AppComponent],
   providers: [{

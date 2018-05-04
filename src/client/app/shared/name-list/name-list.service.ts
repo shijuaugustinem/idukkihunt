@@ -22,7 +22,7 @@ export class NameListService {
    * Returns an Observable for the HTTP GET request for the JSON resource.
    * @return {string[]} The Observable for the HTTP request.
    */
-  get(): Observable<string[]> {
+  gettrendingads(): Observable<string[]> {
     return this.http.get<string[]>('assets/data.json')
                     .pipe(
     //                tap((data: string[]) => console.log('server data:', data)), // debug
