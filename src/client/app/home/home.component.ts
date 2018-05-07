@@ -39,19 +39,19 @@ export class HomeComponent implements OnInit {
   getTrendingAds() {
     this.nameListService.gettrendingads()
       .subscribe(
-        response => {this.showtrendingads(response);},
+        response => this.showtrendingads(response),
         error => this.errorMessage = <any>error
       );
   }
- showtrendingads(data:any) {
+ showtrendingads(data: any) {
    console.log("data",data);
-   let datalen = data.length-1;
+   const datalen = data.length-1;
    if(datalen <= 3) {
      this.trendingAdsData.push(data);
    } else {
       let index = 0;
       for(let i = 0; i < datalen; i++) {
-         let adsData = [];
+         const adsData = [];
          for(let j = 0; j < 4; j++) {
 	    if(index <= datalen) { 
                adsData.push(data[index]);
@@ -86,6 +86,6 @@ export class HomeComponent implements OnInit {
              }
          }
      }); 
-   }, 200)
+   }, 500)
  }
 }

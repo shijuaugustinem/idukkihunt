@@ -1,12 +1,202 @@
-:host {
-  display: block;
-  padding: 0 16px;
+/*-- Post ad --*/
+.post-ad-form {
+    border: 1px solid #eee;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+.post-ad-form form label,.upload-ad-photos label{
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color: #000;
+    margin-top: 10px;
+    display: BLOCK;
+    font-weight: 400;
+    float: left;
+    width: 16%;
+    text-align: right;
+    margin-right: 4%;
+}
+.post-ad-form form label span {
+	color:red;
+}
+.post-ad-form input[type="text"] {
+    padding: 10px 10px 10px 10px;
+    width: 70%;
+    margin-bottom: 25px;
+    border: 1px solid #01a185;
+    outline: none;
+    color: #555;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	float: left;
+}
+.post-ad-form textarea {
+    height: 180px;
+    outline: none;
+    resize: none;
+	padding: 10px 10px 10px 10px;
+    width: 70%;
+    margin-bottom: 25px;
+    border: 1px solid #01a185;
+    outline: none;
+    color: #555;
+}
+.post-ad-form input[type="text"]:hover,.post-ad-form textarea:hover {
+    border: 1px solid #f3c500;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.post-ad-form form select {
+    border: 1px solid #01a185;
+    background-color: #fff;
+    padding: 8px;
+    width: 30%;
+    margin-bottom: 25px;
+}
+.post-ad-form input[type="submit"] {
+    background: #f3c500;
+    color: white;
+    -webkit-appearance: none;
+    border: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 50px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    margin-top: 20px;
+	float: right;
 }
 
-h2 {
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.005em;
-  margin-bottom: 0;
-  margin-top: 0.83em;
+legend
+{
+	font-weight: bold;
+	color: #333;
 }
+
+#filedrag
+{
+	display: none;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px 0;
+    margin: 25px 0;
+    color: #f3c500;
+    border: 2px dashed #f3c500;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    cursor: default;
+    font-size: 20px;
+}
+
+#filedrag.hover
+{
+	color: #f00;
+	border-color: #f00;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+pre
+{
+	width: 95%;
+	height: 8em;
+	font-family: monospace;
+	font-size: 0.9em;
+	padding: 1px 2px;
+	margin: 0 0 1em auto;
+	border: 1px inset #666;
+	background-color: #eee;
+	overflow: auto;
+}
+
+#messages {
+    padding: 15px 10px;
+    margin: 15px 0;
+    border: 1px solid #01a185;
+}
+
+#messages p
+{
+	    color: #555;
+		font-size:14px;
+}
+
+#progress p
+{
+	display: block;
+	width: 240px;
+	padding: 2px 5px;
+	margin: 2px 0;
+	border: 1px inset #446;
+	border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+	background: #eee url("progress.png") 100% 0 repeat-y;
+}
+
+#progress p.success
+{
+	background: #0c0 none 0 0 no-repeat;
+}
+
+#progress p.failed
+{
+	background: #c00 none 0 0 no-repeat;
+}
+.photos-upload-view{
+	float:left;
+	width: 70%;
+	margin-top: 10px;
+}
+.upload-ad-photos {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.personal-details label {
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color: #000;
+    margin-top: 10px;
+    display: BLOCK;
+    font-weight: 400;
+    float: left;
+    width: 16%;
+    text-align: right;
+    margin-right: 4%;
+}
+p.post-terms {
+    margin-left: 20%;
+    color: #000;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+p.post-terms a {
+    color: #01A185;
+}
+/*-- //Post ad --*/
