@@ -236,6 +236,7 @@ i.real-estate {
 	-webkit-box-shadow: 0 0 10px #F9F9F9;
 	-moz-box-shadow: 0 0 10px #F9F9F9;
 	box-shadow: 0 0 10px #F9F9F9;
+	cursor:pointer;
 }
 .biseller-column a {
     display: block;

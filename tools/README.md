@@ -1,6 +1,4 @@
-# Tools documentation
-
-This document contains information about the tools section of the `angular-seed`.
+# Idukki Deals
 
 ## General Information
 

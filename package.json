@@ -1,7 +1,7 @@
 {
-  "name": "angular-seed",
+  "name": "Idukki-deals",
   "version": "1.0.0",
-  "description": "Modular starter project for Angular 2 (and beyond) with statically typed build and AoT compilation",
+  "description": "Idukki Deals resales any items",
   "repository": {
     "type": "git",
     "url": "https://github.com/mgechev/angular-seed"

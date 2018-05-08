@@ -2,11 +2,15 @@
 			<div class="container">    
 				<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with IdukkiDeals</h1>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a [routerLink]="['/postad']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Post Free Ad</a>
+				<a [routerLink]="['/postad']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Post Free Ad {{showmore}}</a>
 			</div>
 		</div>
+		<!-- Individual information -->
+		<div *ngIf="showmore">
+		   <moreinfo-component [moreInfoData]="viewOfferDetailsData" (notify)='onNotify($event)' ></moreinfo-component>
+		</div>
 		<!-- content-starts-here -->
-		<div class="content">
+		<div class="content" *ngIf="!showmore">
 			<div class="categories">
 				<div class="container">
 					<div class="col-md-2 focus-grid">
@@ -136,20 +140,18 @@
 				<div class="container">
 				<!-- slider -->
 				<div class="trend-ads">
-					<h2>Trending Ads</h2>
+					<h2 (click)="ShowMoreInformation('ads');">Trending Ads</h2>
 							<ul id="flexiselDemo3">
-								<li>
-									<!--<div class="col-md-3 biseller-column" *ngFor="let ads of trendingAdsData">
-										<a href="single.html">
-											<img src={{ads.image}}/>
-											<span class="price">&#36; {{ads.price}}</span>
-										</a> 
+								<li *ngFor="let adslist of trendingAdsData">
+								    <div class="col-md-3 biseller-column" (click)="ShowMoreInformation(ads);" *ngFor="let ads of adslist">
+										<img src={{ads.image}}/>
+										<span class="price">&#36; {{ads.price}}</span>
 										<div class="ad-info">
 											<h5>{{ads.description}}</h5>
 											<span>{{ads.time}}</span>
 										</div>
-									</div>-->
-									<div class="col-md-3 biseller-column">
+									</div>
+										<!--<div class="col-md-3 biseller-column">
 										<a href="single.html">
 											<img src="../../../assets/images/p2.jpg"/>
 											<span class="price">&#36; 399</span>
@@ -262,7 +264,7 @@
 											<h5>There are many variations of passages</h5>
 											<span>1 hour ago</span>
 										</div>
-									</div>
+									</div>-->
 								</li>
 						</ul>
 					</div>   

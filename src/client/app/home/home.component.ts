@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NameListService } from '../shared/name-list/name-list.service';
+import {MoreInfoComponent} from '../moreinfo/moreinfo.component';
 
 declare var jQuery: any;
 
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit {
   newName = '';
   errorMessage: string;
   trendingAdsData: any[] = [];
+  viewOfferDetailsData:any ={};
+  showmore: boolean = false;
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -64,28 +67,40 @@ export class HomeComponent implements OnInit {
    }
    console.log("trendingAdsData",this.trendingAdsData)
    setTimeout(()=> {
-     jQuery("#flexiselDemo3").flexisel({
-         visibleItems: 1,
-         animationSpeed: 1000,
-         autoPlay: true,
-         autoPlaySpeed: 5000,
-         pauseOnHover: true,
-         enableResponsiveBreakpoints: true,
-         responsiveBreakpoints: {
-             portrait: {
-                 changePoint: 480,
-                 visibleItems: 1
-             },
-             landscape: {
-                 changePoint: 640,
-                 visibleItems: 1
-             },
-             tablet: {
-                 changePoint: 768,
-                 visibleItems: 1
-             }
-         }
-     }); 
+	 jQuery("#flexiselDemo3").flexisel({
+	    visibleItems: 1,
+	    itemsToScroll: 1,
+	    animationSpeed: 400,
+	    infinite: true,
+	    navigationTargetSelector: null,
+	    autoPlay: {
+	      enable: false,
+	      interval: 5000,
+	      pauseOnHover: true
+	    },
+	    responsiveBreakpoints: { 
+	      portrait: { 
+		changePoint:480,
+		visibleItems: 1,
+		itemsToScroll: 1
+	      }, 
+		landscape: { 
+		changePoint:640,
+		visibleItems: 2,
+		itemsToScroll: 2
+	      },
+		tablet: { 
+		changePoint:768,
+		visibleItems: 3,
+		itemsToScroll: 3
+	      }
+	    }
+	  });
    }, 500)
+ }
+ ShowMoreInformation(data:any) {
+    console.log("Dataaaa",data);
+    this.showmore =true;
+    this.viewOfferDetailsData = data;
  }
 }

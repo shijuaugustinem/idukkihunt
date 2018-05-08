@@ -14,6 +14,9 @@
     color: #01a185;
 	text-decoration:none;
 }
+.logo a img{
+   width:90px;
+}
 .logo a span {
 	color:#f3c500;
 }
