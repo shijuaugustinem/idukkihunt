@@ -4,7 +4,7 @@
     padding: 40px;
     margin-bottom: 60px;
 }
-.post-ad-form form label,.upload-ad-photos label{
+.post-ad-form label,.upload-ad-photos label{
     font-size: 15px;
     text-transform: capitalize;
     margin-bottom: 8px;
@@ -17,7 +17,7 @@
     text-align: right;
     margin-right: 4%;
 }
-.post-ad-form form label span {
+.post-ad-form label span {
 	color:red;
 }
 .post-ad-form input[type="text"] {
@@ -53,7 +53,7 @@
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.post-ad-form form select {
+.post-ad-form select {
     border: 1px solid #01a185;
     background-color: #fff;
     padding: 8px;

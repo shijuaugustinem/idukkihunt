@@ -1,39 +1,37 @@
-		<div class="main-banner banner text-center">
+		<div class="main-banner banner text-center" *ngIf="!searchListService.showmoreinfo">
 			<div class="container">    
-				<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with IdukkiDeals</h1>
+				<h1>Deal or Advertise   <span class="segment-heading">    anything online </span> with IDDeals</h1>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a [routerLink]="['/postad']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Post Free Ad {{showmore}}</a>
+				<a [routerLink]="['/postad']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Post Deal</a>
 			</div>
 		</div>
 		<!-- Individual information -->
-		<div *ngIf="showmore">
+		<div *ngIf="searchListService.showmoreinfo">
 		   <moreinfo-component [moreInfoData]="viewOfferDetailsData" (notify)='onNotify($event)' ></moreinfo-component>
 		</div>
 		<!-- content-starts-here -->
-		<div class="content" *ngIf="!showmore">
+		<div class="content" *ngIf="!searchListService.showmoreinfo">
 			<div class="categories">
 				<div class="container">
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html">
+					<div class="col-md-3 focus-grid" (click)="categoryClick('Shops');">
 							<div class="focus-border">
 								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-mobile"></i></div>
-									<h4 class="clrchg">Mobiles</h4>
+									<div class="focus-image"><i class="fa fa-building"></i></div>
+									<h4 class="clrchg">Shops</h4>
 								</div>
 							</div>
-						</a>
 					</div>
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab2">
 							<div class="focus-border">
 								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-laptop"></i></div>
-									<h4 class="clrchg"> Electronics & Appliances</h4>
+									<div class="focus-image"><i class="fa fa-bed"></i></div>
+									<h4 class="clrchg">Hotels</h4>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab3">
 							<div class="focus-border">
 								<div class="focus-layout">
@@ -43,7 +41,7 @@
 							</div>
 						</a>
 					</div>	
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab4">
 							<div class="focus-border">
 								<div class="focus-layout">
@@ -53,17 +51,17 @@
 							</div>
 						</a>
 					</div>	
-					<div class="col-md-2 focus-grid">
+					<!--<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab5">
 							<div class="focus-border">
 								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-wheelchair"></i></div>
-									<h4 class="clrchg">Furnitures</h4>
+									<div class="focus-image"><i class="fa fa-map-signs"></i></div>
+									<h4 class="clrchg">Tourism</h4>
 								</div>
 							</div>
 						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
+					</div>-->
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab6">
 							<div class="focus-border">
 								<div class="focus-layout">
@@ -73,37 +71,27 @@
 							</div>
 						</a>
 					</div>	
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab7">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-book"></i></div>
-									<h4 class="clrchg">Books, Sports & Hobbies</h4>
-								</div>
-							</div>
-						</a>
-					</div>	
-					<div class="col-md-2 focus-grid">
+					<!--<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab8">
 							<div class="focus-border">
 								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
-									<h4 class="clrchg">Fashion</h4>
+									<div class="focus-image"><i class="fa fa-newspaper-o"></i></div>
+									<h4 class="clrchg">Local News</h4>
 								</div>
 							</div>
 						</a>
 					</div>	
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab9">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-gamepad"></i></div>
-									<h4 class="clrchg">Kids</h4>
+									<h4 class="clrchg">Others</h4>
 								</div>
 							</div>
 						</a>
 					</div>	
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab10">
 							<div class="focus-border">
 								<div class="focus-layout">
@@ -112,18 +100,8 @@
 								</div>
 							</div>
 						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab11">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-at"></i></div>
-									<h4 class="clrchg">Jobs</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
+					</div>-->					
+					<div class="col-md-3 focus-grid">
 						<a href="categories.html#parentVerticalTab12">
 							<div class="focus-border">
 								<div class="focus-layout">
@@ -133,6 +111,26 @@
 							</div>
 						</a>
 					</div>
+					<div class="col-md-3 focus-grid">
+						<a href="categories.html#parentVerticalTab11">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-at"></i></div>
+									<h4 class="clrchg">Jobs</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 focus-grid">
+						<a href="categories.html#parentVerticalTab7">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-shield"></i></div>
+									<h4 class="clrchg">Services</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -140,7 +138,7 @@
 				<div class="container">
 				<!-- slider -->
 				<div class="trend-ads">
-					<h2 (click)="ShowMoreInformation('ads');">Trending Ads</h2>
+					<h2 (click)="ShowMoreInformation('ads');">Trending Deals</h2>
 							<ul id="flexiselDemo3">
 								<li *ngFor="let adslist of trendingAdsData">
 								    <div class="col-md-3 biseller-column" (click)="ShowMoreInformation(ads);" *ngFor="let ads of adslist">
@@ -271,3 +269,4 @@
 			</div>
 			<!-- //slider -->				
 			</div>
+

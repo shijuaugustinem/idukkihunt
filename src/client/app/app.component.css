@@ -3,3 +3,21 @@
   display: flex;
   flex-flow: column;
 }
+#overlay {    
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.75);
+   position: fixed;
+   z-index: 3;
+   top: 0;
+}
+#overlay img {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin-top: 250px;
+}

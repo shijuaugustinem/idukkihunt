@@ -1,0 +1,77 @@
+.errorPopUp {
+  position: absolute;
+  top: 240px;
+  min-height: 320px;
+  width: 480px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 2;
+  height: auto;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 0px 10px 30px 10px;
+}
+.errorPopUp .svg_Div_Error {
+  margin-top: 62px;
+  margin-left: 215px;
+}
+.errorPopUp .svg_Div_Success {
+  margin-top: 47px;
+  margin-left: 215px;
+}
+.errorPopUp .errorClass {
+  font-family: 'Roboto-Bold';
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-top: 18px;
+}
+.errorPopUp .successClass {
+  font-family: 'Roboto-Bold';
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-top: 18px;
+}
+.errorPopUp .errorMsg {
+  font-family: 'Roboto-Regular';
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 18px;
+}
+.errorPopUp .successMsg {
+  font-family: 'Roboto-Regular';
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 18px;
+}
+.errorPopUp .errorButton button {
+  height: 40px;
+  width: 180px;
+  background-color: #279de1;
+  font-family: 'Roboto-Bold';
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Roboto-Bold';
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+.errorPopUp .successButton button {
+  height: 40px;
+  width: 180px;
+  background-color: #279de1;
+  font-family: 'Roboto-Bold';
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Roboto-Bold';
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}

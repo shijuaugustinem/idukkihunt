@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NameListService } from '../shared/name-list/name-list.service';
-import {MoreInfoComponent} from '../moreinfo/moreinfo.component';
+import { SearchListService } from '../shared/search-list/search-list.service';
+import { Router } from '@angular/router';
 
 declare var jQuery: any;
 
@@ -19,7 +20,6 @@ export class HomeComponent implements OnInit {
   errorMessage: string;
   trendingAdsData: any[] = [];
   viewOfferDetailsData:any ={};
-  showmore: boolean = false;
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
    *
    * @param {NameListService} nameListService - The injected NameListService.
    */
-  constructor(public nameListService: NameListService) {}
+  constructor(public nameListService: NameListService, public searchListService: SearchListService,  private router: Router) {}
 
   /**
    * Get the names OnInit
@@ -96,11 +96,14 @@ export class HomeComponent implements OnInit {
 	      }
 	    }
 	  });
-   }, 500)
+   }, 800)
+ }
+ categoryClick(data:any) {
+    this.router.navigate(['category']);  
  }
  ShowMoreInformation(data:any) {
     console.log("Dataaaa",data);
-    this.showmore =true;
+    this.searchListService.showmoreinfo = true;
     this.viewOfferDetailsData = data;
  }
 }

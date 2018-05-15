@@ -1,5 +1,9 @@
+<div id="overlay" style="height: 100%;" *ngIf="showLoading">
+    <img src="../assets/images/loading.gif" alt="Be patient..." />
+</div>
 <sd-toolbar></sd-toolbar>
 <!--<sd-navbar></sd-navbar>-->
 <router-outlet></router-outlet>
 <sd-footer></sd-footer>
+<error-component [popUpType]="errorPopupType"  *ngIf="showPopup" [errorAlertMessage]='errorMessage' (notify)='onNotify()' (notifyTrue)='onNotifyTrue()' (notifyFalse)='onNotifyFalse()' [okText]="okText" [cancelText]="cancelText"></error-component>
 
