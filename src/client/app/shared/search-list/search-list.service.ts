@@ -17,7 +17,7 @@ export interface showerrorpopup {
 @Injectable()
 export class SearchListService {
   showmoreinfo:boolean = false;
-
+  rootSet :string = '';
   private postAddToToolbarSubject = new Subject<showerrorpopup>();
  postAddToToolbarToastState = this.postAddToToolbarSubject.asObservable();
 

@@ -7,20 +7,26 @@
 }
 .header-right{
 	float:right;
+	cursor:pointer;
 }
-.logo a {
+.header-right.active{
+    display:none;
+}
+
+.logo div {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 50px;
     color: #01a185;
 	text-decoration:none;
+	cursor:pointer;
 }
-.logo a img{
+.logo div img{
    width:90px;
 }
-.logo a span {
+.logo div span {
 	color:#f3c500;
 }
-a.account {
+span.account {
     float: left;
     margin-top: 20px;
     font-size: 15px;
@@ -30,6 +36,6 @@ a.account {
     text-decoration: none;
 	margin-bottom: 20px;
 }
-a.account:hover {
+span.account:hover {
 	background-color: #f3c500;
 }

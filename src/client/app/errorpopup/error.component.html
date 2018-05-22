@@ -1,55 +1,37 @@
-<div class="errorPopUp">
+<div id="modal">
+    <div *ngIf="!popUpType" class="svg_Div_Error">
+		 <svg width="40px" height="50px" viewBox="0 0 40 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
-    <div *ngIf="popUpType==false" class="svg_Div_Error">
-     <svg width="40px" height="50px" viewBox="0 0 40 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Flight-Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Search-Error" transform="translate(-620.000000, -302.000000)" fill-rule="nonzero" fill="#FB5F5D">
-            <g id="Content" transform="translate(400.000000, 240.000000)">
-                <path d="M239.839286,62.0059062 C239.660232,62.0263663 239.485468,62.0754129 239.321429,62.1512403 L221.035714,70.2536123 C220.408131,70.5288646 220.001177,71.157017 220,71.8522866 C220,84.4075247 220.740149,91.7117339 223.642857,97.3583679 C226.545566,103.00506 231.429274,106.556849 239.053571,111.710161 C239.627349,112.096613 240.372651,112.096613 240.946429,111.710161 C248.570726,106.556849 253.454434,103.00506 256.357143,97.3583679 C259.259851,91.7117339 260,84.4075247 260,71.8522866 C259.998823,71.157017 259.591869,70.5288646 258.964286,70.2536123 L240.678571,62.1512403 C240.415271,62.0317764 240.126609,61.9817906 239.839286,62.0059062 L239.839286,62.0059062 Z M240,65.6574237 L256.553571,72.9786254 C256.499743,84.5999993 255.678229,91.1568486 253.321429,95.7415559 C250.995046,100.267083 246.935823,103.429377 240,108.149478 C233.064177,103.429377 229.004954,100.267083 226.678571,95.7415559 C224.321771,91.1568486 223.50024,84.5999993 223.446429,72.9786254 L240,65.6574237 Z M235.428571,73.0512924 L236.571429,90.491335 L243.428571,90.491335 L244.571429,73.0512924 L235.428571,73.0512924 Z M236.571429,92.8166795 L236.571429,99.7927128 L243.428571,99.7927128 L243.428571,92.8166795 L236.571429,92.8166795 Z" id="error"></path>
-            </g>
-        </g>
-    </g>
-    </svg>
-    </div>
-<div *ngIf="popUpType" class="svg_Div_Success">
-	<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
 		<desc>Created with Sketch.</desc>
 		<defs></defs>
 		<g id="Flight-Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-			<g id="Success-Message" transform="translate(-608.000000, -278.000000)" fill="#279DE1">
+			<g id="Search-Error" transform="translate(-620.000000, -302.000000)" fill-rule="nonzero" fill="#FB5F5D">
 				<g id="Content" transform="translate(400.000000, 240.000000)">
-					<path d="M240,102 C222.326888,102 208,87.673112 208,70 C208,52.326888 222.326888,38 240,38 C257.673112,38 272,52.326888 272,70 C272,87.673112 257.673112,102 240,102 Z M240,98 C255.463973,98 268,85.463973 268,70 C268,54.536027 255.463973,42 240,42 C224.536027,42 212,54.536027 212,70 C212,85.463973 224.536027,98 240,98 Z M236.642857,79.5 L227,70.125 L229.7,67.5 L236.642857,74.25 L251.3,60 L254,62.625 L236.642857,79.5 Z" id="tick"></path>
+					<path d="M239.839286,62.0059062 C239.660232,62.0263663 239.485468,62.0754129 239.321429,62.1512403 L221.035714,70.2536123 C220.408131,70.5288646 220.001177,71.157017 220,71.8522866 C220,84.4075247 220.740149,91.7117339 223.642857,97.3583679 C226.545566,103.00506 231.429274,106.556849 239.053571,111.710161 C239.627349,112.096613 240.372651,112.096613 240.946429,111.710161 C248.570726,106.556849 253.454434,103.00506 256.357143,97.3583679 C259.259851,91.7117339 260,84.4075247 260,71.8522866 C259.998823,71.157017 259.591869,70.5288646 258.964286,70.2536123 L240.678571,62.1512403 C240.415271,62.0317764 240.126609,61.9817906 239.839286,62.0059062 L239.839286,62.0059062 Z M240,65.6574237 L256.553571,72.9786254 C256.499743,84.5999993 255.678229,91.1568486 253.321429,95.7415559 C250.995046,100.267083 246.935823,103.429377 240,108.149478 C233.064177,103.429377 229.004954,100.267083 226.678571,95.7415559 C224.321771,91.1568486 223.50024,84.5999993 223.446429,72.9786254 L240,65.6574237 Z M235.428571,73.0512924 L236.571429,90.491335 L243.428571,90.491335 L244.571429,73.0512924 L235.428571,73.0512924 Z M236.571429,92.8166795 L236.571429,99.7927128 L243.428571,99.7927128 L243.428571,92.8166795 L236.571429,92.8166795 Z" id="error"></path>
 				</g>
 			</g>
 		</g>
-	</svg>
-</div>
-
-
-    <div *ngIf="popUpType==false" class="errorClass" [innerHTML]="errorAlertMessage"></div>
+		</svg>
+    </div>
+	<div *ngIf="popUpType" class="svg_Div_Success">
+		<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+			<desc>Created with Sketch.</desc>
+			<defs></defs>
+			<g id="Flight-Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g id="Success-Message" transform="translate(-608.000000, -278.000000)" fill="#279DE1">
+					<g id="Content" transform="translate(400.000000, 240.000000)">
+						<path d="M240,102 C222.326888,102 208,87.673112 208,70 C208,52.326888 222.326888,38 240,38 C257.673112,38 272,52.326888 272,70 C272,87.673112 257.673112,102 240,102 Z M240,98 C255.463973,98 268,85.463973 268,70 C268,54.536027 255.463973,42 240,42 C224.536027,42 212,54.536027 212,70 C212,85.463973 224.536027,98 240,98 Z M236.642857,79.5 L227,70.125 L229.7,67.5 L236.642857,74.25 L251.3,60 L254,62.625 L236.642857,79.5 Z" id="tick"></path>
+					</g>
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div *ngIf="!popUpType" class="errorClass" [innerHTML]="errorAlertMessage"></div>
     <div *ngIf="popUpType" class="successClass" [innerHTML]="errorAlertMessage"></div>
-    <div *ngIf="popUpType==false" class="errorMsg">
-        <!--You have encountered an error. Do you want to proceed?-->
-       <!--You have encountered an error. Do you want to proceed?-->
-    </div>
-
-    <div *ngIf="popUpType" class="successMsg" style="display:none;">
-        <!--You have encountered an error. Do you want to proceed?-->
-       Description...........
-    </div>
-
-    <div *ngIf="popUpType==false" class="errorButton">
-
-   <button (click)="closeErrorPopUp(true);$event.stopPropagation();" style="margin-left: 50px; margin-top: 51px;">{{okText ? okText:'OK'}}</button>
-    <button (click)="closeErrorPopUp(false);$event.stopPropagation();" style="background-color: #fb5f5d;">{{cancelText ? cancelText: 'CANCEL'}}</button>
-    </div>
-
-<div *ngIf="popUpType" class="successButton">
-<button (click)="closeErrorPopUp();$event.stopPropagation();" style="margin-left: 150px; margin-top: 51px;">OK</button>
-</div>
-
+	<p *ngIf="popUpType" style="display:none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ultrices lorem, eu rhoncus dolor sollicitudin et. Suspendisse diam mauris, porta nec sollicitudin et, varius a ipsum.</p>
+	
+	<div class="yes" (click)="closeErrorPopUp(true);$event.stopPropagation();" *ngIf="popUpType">{{okText ? okText:'OK'}}</div>
+	<div class="no" (click)="closeErrorPopUp(false);$event.stopPropagation();" *ngIf="popUpType">{{cancelText ? cancelText: 'CANCEL'}}</div>
+	<div class="ok" (click)="closeErrorPopUp(false);$event.stopPropagation();" *ngIf="!popUpType">OK</div>
 </div>

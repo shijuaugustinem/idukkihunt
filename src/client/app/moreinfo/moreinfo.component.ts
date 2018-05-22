@@ -36,5 +36,6 @@ export class MoreInfoComponent {
   }
   closePopup() {
      this.searchListService.showmoreinfo = false;
+     this.notify.emit(true);
   }
 }

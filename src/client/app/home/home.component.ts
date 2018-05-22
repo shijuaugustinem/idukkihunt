@@ -28,11 +28,24 @@ export class HomeComponent implements OnInit {
    * @param {NameListService} nameListService - The injected NameListService.
    */
   constructor(public nameListService: NameListService, public searchListService: SearchListService,  private router: Router) {}
-
+  onNotify(value: boolean) {
+     console.log("onNotify data",value);
+     if(value) {
+        this.getTrendingAds();
+     }
+  }
   /**
    * Get the names OnInit
    */
   ngOnInit() {
+    if (window.location.pathname == '/') {
+      this.searchListService.rootSet = 'home';
+    } else if (window.location.pathname == '/login'){
+      this.searchListService.rootSet = 'login'
+    }
+     jQuery('.flexslider').flexslider({
+        animation: "slide"
+     });
      this.getTrendingAds();
   }
 
@@ -48,6 +61,7 @@ export class HomeComponent implements OnInit {
   }
  showtrendingads(data: any) {
    console.log("data",data);
+   this.trendingAdsData = [];
    const datalen = data.length-1;
    if(datalen <= 3) {
      this.trendingAdsData.push(data);

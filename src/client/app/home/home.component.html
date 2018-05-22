@@ -1,9 +1,27 @@
+		<!-- Main Banner-->
 		<div class="main-banner banner text-center" *ngIf="!searchListService.showmoreinfo">
 			<div class="container">    
-				<h1>Deal or Advertise   <span class="segment-heading">    anything online </span> with IDDeals</h1>
+				<h1>Deal or Advertise   <span class="segment-heading">    anything online </span> with IdukkiDeals</h1>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
 				<a [routerLink]="['/postad']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Post Deal</a>
 			</div>
+		</div>
+		<!-- carusal slideer -->
+		<div class="flexslider" [class.active]="searchListService.showmoreinfo">
+		  <ul class="slides">
+			<li>
+			  <img src="../../../assets/images/b1.jpg" />
+			</li>
+			<li>
+			  <img src="../../../assets/images/b2.jpg" />
+			</li>
+			<li>
+			  <img src="../../../assets/images/b3.jpg" />
+			</li>
+			<li>
+			  <img src="../../../assets/images/b4.jpg" />
+			</li>
+		  </ul>
 		</div>
 		<!-- Individual information -->
 		<div *ngIf="searchListService.showmoreinfo">
@@ -269,4 +287,3 @@
 			</div>
 			<!-- //slider -->				
 			</div>
-

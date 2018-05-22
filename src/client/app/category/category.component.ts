@@ -27,6 +27,7 @@ export class CategoryComponent implements OnInit {
    * Get the names OnInit
    */
   ngOnInit() {
+       window.scrollTo(0, 0);
    //  setTimeout(()=> {
 	jQuery('#parentVerticalTab').easyResponsiveTabs({
             type: 'vertical', //Types: default, vertical, accordion
