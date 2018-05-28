@@ -21,7 +21,9 @@
 	cursor:pointer;
 }
 .logo div img{
-   width:90px;
+    width: 50px;
+    height: 40px;
+    padding-right: 15px;
 }
 .logo div span {
 	color:#f3c500;
